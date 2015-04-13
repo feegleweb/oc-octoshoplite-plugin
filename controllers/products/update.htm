@@ -1,0 +1,16 @@
+<?php if (!$this->fatalError): ?>
+
+    <div class="layout fancy-layout">
+        <?= Form::open(['class' => 'layout']) ?>
+
+            <?= $this->formRender() ?>
+
+        <?= Form::close() ?>
+    </div>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('feegleweb/octoshoplite/products') ?>" class="btn btn-default">Return to product list</a></p>
+
+<?php endif ?>

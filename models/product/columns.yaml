@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+    title:
+        label: Title
+    slug:
+        label: Slug
+    model:
+        label: Model
+    category:
+        label: Categories
+        relation: categories
+        select: title
+        sortable: false
+        invisible: true
+    created_at:
+        label: Date Created
+        type: date
+        invisible: true
+    updated_at:
+        label: Last Update
+        type: date

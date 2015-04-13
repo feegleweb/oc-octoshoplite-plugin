@@ -1,0 +1,5 @@
+1.0.0:
+    - First release of Octoshop Lite
+    - create_categories_table.php
+    - create_products_table.php
+    - create_prod_cat_table.php

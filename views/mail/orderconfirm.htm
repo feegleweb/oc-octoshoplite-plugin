@@ -1,0 +1,19 @@
+Hi {{ name }},
+
+You recently {% if (admin) %}received{% else %}placed{% endif %} an order for {{ count }} items from our website, the details of which are as follows:
+
+{% for item in items %}
+{{ item.qty }} x {{ item.name }} @ {{ item.price }}
+{% endfor %}
+Order total: {{ total }}
+{% if (admin) %}
+
+<strong>Customer details:</strong>
+<p>{{ address|raw }}</p>
+{% endif %}
+
+Thank you for your order.
+
+-----
+
+This email was sent automatically by Octoshop, the magic behind {{ site }}. Please do not reply.

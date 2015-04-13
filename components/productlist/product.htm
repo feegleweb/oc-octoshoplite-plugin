@@ -1,0 +1,21 @@
+<h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+{% for image in product.images %}
+    <img alt="{{ product.title }}" src="{{ product.getSquareThumb(179, image) }}" />
+{% endfor %}
+<p>
+    &pound;{{ product.price }}
+    {% if product.inStock() %}
+        (In stock)
+        <button type="submit"
+            data-request="{{ basketComponent }}::onAddProduct"
+            data-request-data="id: {{ product.id }}, quantity: 1"
+            {% if basketContainer %}
+                data-request-update="'{{ basketPartial }}' : '{{ basketContainer }}'"
+            {% endif %}
+        >
+            Add to Basket
+        </button>
+    {% else %}
+        (Out of Stock)
+    {% endif %}
+</p>

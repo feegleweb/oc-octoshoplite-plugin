@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Product
+
+# Model Form Field configuration
+form: $/feegleweb/octoshoplite/models/product/fields.yaml
+
+# Model Class name
+modelClass: Feegleweb\OctoshopLite\Models\Product
+
+# Default redirect location
+defaultRedirect: feegleweb/octoshoplite/products
+
+# Create page
+create:
+    title: Create Product
+    redirect: feegleweb/octoshoplite/products/update/:id
+    redirectClose: feegleweb/octoshoplite/products
+
+# Update page
+update:
+    title: Edit Product
+    redirect: feegleweb/octoshoplite/products
+    redirectClose: feegleweb/octoshoplite/products
+
+# Preview page
+preview:
+    title: Preview Product
