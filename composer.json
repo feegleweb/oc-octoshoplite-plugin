@@ -1,0 +1,16 @@
+{
+    "name": "feegleweb/octoshoplite",
+    "description": "Basic version of Octoshop, the eCommerce plugin for October CMS",
+    "homepage": "http://dsdev.io/",
+    "keywords": ["october", "octobercms", "ecommerce", "shop", "product", "plugin"],
+    "authors": [
+        {
+            "name": "Dave Shoreman",
+            "email": "code@dsdev.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "gloudemans/shoppingcart": "~1.2"
+    }
+}

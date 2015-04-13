@@ -1,0 +1,26 @@
+.form-group.half-width {
+    width: 24.25%;
+}
+.form-group.noclear {
+    clear: none;
+}
+@media (max-width: 769px) {
+    .form-group.half-width {
+        width: 50%;
+    }
+}
+
+.modal form[data-request="onRelationManageCreate"] div[data-field-name="toolbar"],
+.modal form[data-request="onRelationManageCreate"] div[data-field-name="primary_image"],
+.modal form[data-request="onRelationManageCreate"] div[data-field-name="secondary_image"],
+.modal form[data-request="onRelationManageUpdate"] div[data-field-name="toolbar"] {
+    display: none;
+}
+
+/**
+ * Hide redactor's fullscreen button until z-index is fixed in core
+ */
+.modal form[data-request="onRelationManageCreate"] .redactor-btn-right,
+.modal form[data-request="onRelationManageUpdate"] .redactor-btn-right {
+    display: none;
+}

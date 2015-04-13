@@ -1,0 +1,13 @@
+<li>foo
+    <a href="{{ cat.url }}">
+        {{ cat.name }} ({{ cat.productCount }})
+    </a>
+
+    {% if cat.children %}
+    <ul>
+        {% for child in cat.children() %}
+            <li><a href="{{ child.url }}">{{ child.name }} ({{ child.productCount }})</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>

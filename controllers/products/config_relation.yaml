@@ -1,0 +1,14 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+categories:
+    label: Category
+    view:
+        list: $/feegleweb/octoshoplite/models/category/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/feegleweb/octoshoplite/models/category/columns.yaml
+        form: $/feegleweb/octoshoplite/models/category/fields.yaml

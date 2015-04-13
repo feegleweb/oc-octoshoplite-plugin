@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: Title
+        searchable: true
+    slug:
+        label: Slug
+        searchable: false
+    is_enabled:
+        label: Enabled
+        type: switch
+    is_visible:
+        label: Visible
+        type: switch

@@ -1,0 +1,34 @@
+<h2>{{ product.title }}</h2>
+
+{% for image in product.images %}
+    <a href="{{ image.getPath() }}">
+        <img alt="{{ product.title }}" src="{{ product.getSquareThumb(150, image) }}">
+    </a>
+{% endfor %}
+
+{{ product.description|raw }}
+
+<p>
+    {% if product.model %}
+    <strong>Model:</strong> {{ product.model }}<br>
+    {% endif %}
+    <strong>Price:</strong> &pound;{{ product.price }}
+</p>
+
+{% if product.inStock() %}
+    <form
+        data-request="{{ basketComponent }}::onAddProduct"
+        data-request-data="id: {{ product.id }}"
+        {% if basketContainer %}
+            data-request-update="'{{ basketPartial }}' : '{{ basketContainer }}'"
+        {% endif %}
+    >
+        <input type="number" name="quantity" placeholder="Qty"
+            min="1" max="9999" value="1"
+            {% if product.outOfStock() %}disabled{% endif %}
+        >
+        <button type="submit">Add to Basket</button>
+    </form>
+{% else %}
+    Out of Stock
+{% endif %}

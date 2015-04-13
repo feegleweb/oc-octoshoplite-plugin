@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Product</th>
+            <th>Qty.</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in __SELF__.basketItems %}
+            {% partial __SELF__~'::_item' item=item %}
+        {% endfor %}
+        <tr>
+            <td colspan="4">Total:</td>
+            <td>&pound;<span class="ocshop-total">{{ __SELF__.basketTotal }}</span></td>
+        </tr>
+    </tbody>
+</table>

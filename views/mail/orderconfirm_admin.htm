@@ -1,0 +1,14 @@
+Hi {{ name }},
+
+You recently received an order for {{ count }} items from your website, the details of which are as follows:
+
+<h3>Customer Information</h3>
+<p>{{ address|raw }}</p>
+
+<h3>Order Items</h3>
+{% for item in items %}
+{{ item.qty }} x {{ item.name }} @ {{ item.price }}
+{% endfor %}
+Order total: {{ total }}
+
+Thanks for using Octoshop!

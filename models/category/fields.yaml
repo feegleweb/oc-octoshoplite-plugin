@@ -1,0 +1,78 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        span: left
+        placeholder: Category name
+        required: true
+
+    slug:
+        label: Slug
+        span: right
+        required: true
+        preset:
+            field: name
+            type: slug
+
+    toolbar:
+        type: partial
+        path: $/feegleweb/octoshoplite/controllers/products/_relation_toolbar.htm
+        cssClass: collapse-visible
+
+secondaryTabs:
+
+    fields:
+
+        description:
+            tab: Manage
+            type: richeditor
+            span: left
+            size: giant
+
+        is_enabled:
+            tab: Manage
+            label: Enable category
+            span: right
+            type: switch
+
+        is_visible:
+            tab: Manage
+            label: Show in menus
+            span: right
+            type: switch
+
+        is_subcategory:
+            tab: Manage
+            label: Make it a subcategory?
+            span: right
+            type: switch
+
+        parent:
+            tab: Manage
+            label: Parent Category
+            span: right
+            type: relation
+            cssClass: checkbox-align
+            trigger:
+                action: show
+                field: is_subcategory
+                condition: checked
+
+        secondary_image:
+            tab: Manage
+            label: Secondary image
+            span: right
+            cssClass: half-width
+            type: fileupload
+            mode: image
+
+        primary_image:
+            tab: Manage
+            label: Primary image
+            span: right
+            cssClass: half-width noclear
+            type: fileupload
+            mode: image

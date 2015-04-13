@@ -1,0 +1,5 @@
+<ul>
+    {% for cat in __SELF__.categories %}
+        {% partial __SELF__~'::_item' cat=cat %}
+    {% endfor %}
+</ul>

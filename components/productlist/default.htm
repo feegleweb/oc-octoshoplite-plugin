@@ -1,0 +1,3 @@
+{% for product in __SELF__.products %}
+    {% partial __SELF__~'::product' product=product %}
+{% endfor %}
