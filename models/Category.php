@@ -7,8 +7,8 @@ use Model;
  */
 class Category extends Model
 {
-
     use \October\Rain\Database\Traits\NestedTree;
+    use \October\Rain\Database\Traits\Purgeable;
 
     /**
      * @var string The database table used by the model.
@@ -24,6 +24,11 @@ class Category extends Model
      * @var array Fillable fields
      */
     protected $fillable = ['name', 'slug', 'description', 'is_enabled', 'is_visible'];
+
+    /**
+     * @var array Purgeable fields
+     */
+    protected $purgeable = ['title', 'is_subcategory'];
 
     /**
      * @var Relations
@@ -63,8 +68,6 @@ class Category extends Model
         if (!$this->is_subcategory) {
             $this->parent_id = null;
         }
-        unset($this->is_subcategory);
-        unset($this->title);
     }
 
     public function setUrl($pageName, $controller)
