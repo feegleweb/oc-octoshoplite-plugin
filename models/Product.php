@@ -8,6 +8,7 @@ use Carbon\Carbon;
  */
 class Product extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
@@ -23,6 +24,20 @@ class Product extends Model
      * @var array Fillable fields
      */
     protected $fillable = [];
+
+    /**
+     * @var array Validation rules
+     */
+    protected $rules = [
+        'title' => ['required', 'between:4,255'],
+        'slug' => [
+            'required',
+            'alpha_dash',
+            'between:1,255',
+            'unique:feegleweb_octoshop_products'
+        ],
+        'price' => ['numeric', 'max:99999999.99'],
+    ];
 
     /**
      * @var array Attributes to mutate as dates
