@@ -17,62 +17,46 @@ fields:
             field: name
             type: slug
 
-    toolbar:
-        type: partial
-        path: $/feegleweb/octoshoplite/controllers/products/_relation_toolbar.htm
-        cssClass: collapse-visible
+    description:
+        type: richeditor
+        span: left
+        size: giant
 
-secondaryTabs:
+    is_enabled:
+        label: Enable category
+        span: right
+        type: switch
 
-    fields:
+    is_visible:
+        label: Show in menus
+        span: right
+        type: switch
 
-        description:
-            tab: Manage
-            type: richeditor
-            span: left
-            size: giant
+    is_subcategory:
+        label: Make it a subcategory?
+        span: right
+        type: switch
 
-        is_enabled:
-            tab: Manage
-            label: Enable category
-            span: right
-            type: switch
+    parent:
+        label: Parent Category
+        span: right
+        type: relation
+        cssClass: checkbox-align
+        trigger:
+            action: show
+            field: is_subcategory
+            condition: checked
 
-        is_visible:
-            tab: Manage
-            label: Show in menus
-            span: right
-            type: switch
+    secondary_image:
+        label: Secondary image
+        span: right
+        cssClass: half-width
+        type: fileupload
+        mode: image
 
-        is_subcategory:
-            tab: Manage
-            label: Make it a subcategory?
-            span: right
-            type: switch
-
-        parent:
-            tab: Manage
-            label: Parent Category
-            span: right
-            type: relation
-            cssClass: checkbox-align
-            trigger:
-                action: show
-                field: is_subcategory
-                condition: checked
-
-        secondary_image:
-            tab: Manage
-            label: Secondary image
-            span: right
-            cssClass: half-width
-            type: fileupload
-            mode: image
-
-        primary_image:
-            tab: Manage
-            label: Primary image
-            span: right
-            cssClass: half-width noclear
-            type: fileupload
-            mode: image
+    primary_image:
+        label: Primary image
+        span: right
+        cssClass: half-width noclear
+        type: fileupload
+        mode: image
