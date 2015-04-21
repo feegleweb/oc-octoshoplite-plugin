@@ -4,3 +4,4 @@
     - create_products_table.php
     - create_prod_cat_table.php
 1.0.1: Validation and other minor fixes
+1.0.2: Minor partial fix

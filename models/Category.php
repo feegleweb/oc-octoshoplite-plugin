@@ -68,6 +68,8 @@ class Category extends Model
         if (!$this->is_subcategory) {
             $this->parent_id = null;
         }
+
+        $this->storeNewParent();
     }
 
     public function setUrl($pageName, $controller)
